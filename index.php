@@ -1,9 +1,9 @@
 <?php
 
-require_once 'src/Basket.php';
-require_once 'src/Customer.php';
-require_once 'src/PhysicalProduct.php';
-require_once 'src/VirtualProduct.php';
+require_once '../src/Basket.php';
+require_once '../src/Customer.php';
+require_once '../src/PhysicalProduct.php';
+require_once '../src/VirtualProduct.php';
 
 $physprod1 = new PhysicalProduct('Football', 7.00, 3.34, 'A Nike football.');
 $physprod2 = new PhysicalProduct('Gameboy', 50.00, 15.00, 'A classic Gameboy.');

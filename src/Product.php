@@ -19,6 +19,7 @@ $this->description = $description;
 
 public abstract function getDisplay();
 
+
 public abstract function getShippingPrice(): float;
 
 }

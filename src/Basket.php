@@ -1,12 +1,8 @@
 <?php
-
-require_once 'src/Product.php';
-
-class Basket implements Displayable
+class Basket
 {
     private array $product = [];
-    private string $customer;
-    public function addProduct(Product $product, Customer $customer)
+    public function addProduct(Product $product)
     {
         $this->product[] = $product;
 

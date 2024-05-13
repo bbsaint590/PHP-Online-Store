@@ -1,6 +1,6 @@
 <?php
 
-require_once 'src/Product.php';
+require_once '../src/Product.php';
 class Customer implements Displayable
 {
 private string $name;

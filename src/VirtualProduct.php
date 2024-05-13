@@ -1,6 +1,6 @@
 <?php
 
-require_once 'src/Product.php';
+require_once '../src/Product.php';
 class VirtualProduct extends Product implements Displayable
 {
 private float $fileSize;

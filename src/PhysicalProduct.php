@@ -1,6 +1,6 @@
 <?php
 
-require_once 'src/Product.php';
+require_once '../src/Product.php';
 class PhysicalProduct extends Product implements Displayable
 {
 private float $weight;
