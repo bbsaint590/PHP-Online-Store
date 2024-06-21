@@ -1,18 +1,19 @@
 <?php
+
 class Basket
 {
-    private array $product = [];
+    private array $products = [];
+
     public function addProduct(Product $product)
     {
-        $this->product[] = $product;
-
+        $this->products[] = $product;
     }
 
-    public function getDisplay()
+    public function getDisplay(): string
     {
         $display = "<h2>Products in Basket:</h2>";
 
-        foreach ($this->product as $product) {
+        foreach ($this->products as $product) {
             $display .= $product->getDisplay();
         }
 

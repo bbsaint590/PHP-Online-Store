@@ -1,33 +1,32 @@
 <?php
 
-require_once '../src/Product.php';
-class PhysicalProduct extends Product implements Displayable
-{
-private float $weight;
+require_once 'Product.php';
 
-public function __construct(string $name, float $price, float $weight, string $description)
+class PhysicalProduct extends Product
 {
-parent::__construct($name, $price, $description);
-$this->weight = $weight;
-}
+    private float $weight;
 
-public function getDisplay()
-{
-return "<ul><li>Product: {$this->name}</li> <li>Price: £{$this->price}</li> <li>Description: {$this->description}</li></ul>";
-}
+    public function __construct(string $name, float $price, float $weight, string $description)
+    {
+        parent::__construct($name, $price, $description);
+        $this->weight = $weight;
+    }
 
-public function getShippingPrice(): float
-{
-$weight = $this->weight;
-if ($weight < 10) {
-$price = 5.99;
-} elseif ($weight >= 10 && $weight < 100) {
-$price = 10.99;
-} else {
-$price = 0;
-}
-return $price;
-}
+    public function getDisplay(): string
+    {
+        return "<ul><li>Product: {$this->name}</li> <li>Price: £{$this->price}</li> <li>Description: {$this->description}</li></ul>";
+    }
+
+    public function getShippingPrice(): float
+    {
+        if ($this->weight < 10) {
+            return 5.99;
+        } elseif ($this->weight >= 10 && $this->weight < 100) {
+            return 10.99;
+        } else {
+            return 0;
+        }
+    }
 }
 
 ?>

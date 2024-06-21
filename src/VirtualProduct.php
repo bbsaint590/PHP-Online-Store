@@ -1,33 +1,28 @@
 <?php
 
-require_once '../src/Product.php';
-class VirtualProduct extends Product implements Displayable
-{
-private float $fileSize;
-private string $fileType;
+require_once 'Product.php';
 
-public function __construct(string $name, float $price, float $fileSize, string $fileType, string $description)
+class VirtualProduct extends Product
 {
-parent::__construct($name, $price, $description);
-$this->fileSize = $fileSize;
-$this->fileType = $fileType;
-}
+    private float $fileSize;
+    private string $fileType;
 
-public function getDisplay()
-{
-return "<ul><li>Product: {$this->name}</li> <li>Price: £{$this->price}</li> <li>File type: {$this->fileType}</li> <li>Description: {$this->description}</li></ul>";
-}
+    public function __construct(string $name, float $price, float $fileSize, string $fileType, string $description)
+    {
+        parent::__construct($name, $price, $description);
+        $this->fileSize = $fileSize;
+        $this->fileType = $fileType;
+    }
 
-public function getShippingPrice(): float
-{
-$size = $this->fileSize;
-if ($size > 1000) {
-$price = 0.50;
-} else {
-$price = 0;
-}
-return $price;
-}
+    public function getDisplay(): string
+    {
+        return "<ul><li>Product: {$this->name}</li> <li>Price: £{$this->price}</li> <li>File type: {$this->fileType}</li> <li>Description: {$this->description}</li></ul>";
+    }
+
+    public function getShippingPrice(): float
+    {
+        return $this->fileSize > 1000 ? 0.50 : 0;
+    }
 }
 
 ?>
